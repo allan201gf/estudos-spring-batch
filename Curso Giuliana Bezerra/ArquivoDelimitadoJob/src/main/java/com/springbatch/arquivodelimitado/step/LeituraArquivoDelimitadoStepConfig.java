@@ -20,7 +20,7 @@ public class LeituraArquivoDelimitadoStepConfig {
 			ItemWriter<Cliente> leituraArquivoDelimitadoWriter) {
 		return stepBuilderFactory
 				.get("leituraArquivoDelimitadoStep")
-				.<Cliente, Cliente>chunk(1)
+				.<Cliente, Cliente>chunk(100000)
 				.reader(leituraArquivoDelimitadoReader)
 				.writer(leituraArquivoDelimitadoWriter)
 				.build();
